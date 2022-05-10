@@ -36,7 +36,23 @@
   })
 
   cw3.addEventListener("click", function () {
-    //TODO implement it
+    answer.innerHTML + "Loading..."
+    fetch('https://jsonplaceholder.typicode.com/posts/33')
+    .then(response => response.json())
+    .then(post => answer.innerHTML = displayPost(post))
   })
 
 })();
+
+function displayPost(post)
+  {
+    return`
+    <div>
+<ul>
+<h2>User ID: ${post.userId}</h2>
+<li>Title: ${post.title}</li>
+</ul>
+<hr/>
+</div>
+`
+  }
