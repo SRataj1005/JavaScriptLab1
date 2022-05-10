@@ -19,12 +19,15 @@
       .then(response => response.json())
       .then(array => {
       answer.innerHTML = "";
-      array.forEach(post => answer.innerHTML +=
-         '    
-          ${post.userId}
+      array.forEach(post => answer.innerHTML += `
+        <div>
+        <ul>
+          <li>User ID: ${post.userId}</li>
+        </ul>
         <hr/>
-        '
-          );
+        </div>
+        `);
+          })
   })
 
   cw2.addEventListener("click", function () {
